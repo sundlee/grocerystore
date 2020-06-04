@@ -1,0 +1,25 @@
+{
+  "name": "supermarket-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cross-env": "^7.0.2",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "sequelize": "^3.30.2",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test mocha api/grocery/grocery.spec.js -w",
+    "start": "node bin/www.js"
+  },
+  "author": "sundlee",
+  "license": "MIT"
+}
