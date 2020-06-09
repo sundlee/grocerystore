@@ -40,7 +40,6 @@ const destroy = (req, res) => {
 }
 
 const create = (req, res) =>{
-  console.log('create');
   const name = req.body.name;
   const price = req.body.price;
   console.log('name: ', name, ', price: ', price);
@@ -85,10 +84,29 @@ const update =  (req, res) => {
       });
 }
 
+const authorize = (req, res) =>{
+  console.log(`authorization_params: ${JSON.stringify(req.body.authorization_params, null, 4)}`);
+  console.log(`request_context: ${JSON.stringify(req.body.request_context, null, 4)}`);
+
+  // do something here with request.body.authorization_params and request.body.request_context
+
+  const response = {
+    "context": {},
+    "authorization_decision": {
+      "decision": "Permit"
+    }
+  };
+
+  res.status(201).json(response);
+}
+
+
+
 module.exports = {
   index,
   show,
   destroy,
   create,
   update,
+  authorize,
 };
